@@ -11,27 +11,15 @@
 body{
   min-height:100vh;
   background:
-    radial-gradient(circle at top, rgba(18,80,50,.85), rgba(2,18,12,.98) 55%),
-    linear-gradient(180deg,#061b12,#020b07);
+    radial-gradient(circle at center, #0f5b38 0%, #063423 35%, #02130c 100%);
   color:#fff;
   font-family:Arial, Helvetica, sans-serif;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(245,185,32,.12), transparent 25%),
-    radial-gradient(circle at 80% 20%, rgba(37,158,110,.12), transparent 30%);
-  pointer-events:none;
 }
 
 .wrapper{
   width:min(1000px,92%);
   margin:0 auto;
   padding:42px 0 70px;
-  position:relative;
 }
 
 .hero{
@@ -40,21 +28,35 @@ body::before{
 }
 
 .logo{
-  width:190px;
+  width:260px;
   max-width:70%;
   display:block;
   margin:0 auto 32px;
-  filter:drop-shadow(0 18px 28px rgba(0,0,0,.55));
-  mix-blend-mode:multiply;
+  filter:
+    drop-shadow(0 0 20px rgba(255,215,0,.20))
+    drop-shadow(0 0 40px rgba(255,215,0,.15));
 }
 
 h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:1;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  font-size:clamp(48px,8vw,88px);
   font-weight:900;
-  text-shadow:0 4px 0 rgba(0,0,0,.55);
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  text-shadow:
+    0 4px 0 rgba(0,0,0,.5),
+    0 10px 25px rgba(0,0,0,.4);
+}
+
+.data{
+  text-align:center;
+  color:#d4a017;
+  font-size:18px;
+  letter-spacing:2px;
+  margin-top:18px;
+  margin-bottom:22px;
+  text-transform:uppercase;
+  font-weight:700;
 }
 
 .goldLine{
@@ -72,23 +74,22 @@ h1{
   top:50%;
   transform:translate(-50%,-50%);
   color:#d7a51d;
-  background:#061b12;
+  background:#063423;
   padding:0 14px;
   font-size:18px;
 }
 
 .card{
-  background:rgba(0,0,0,.28);
-  border:1px solid rgba(215,165,29,.22);
+  background:rgba(0,0,0,.34);
+  border:1px solid rgba(215,165,29,.32);
   border-radius:22px;
-  padding:42px;
-  box-shadow:0 24px 80px rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);
+  padding:46px 50px;
+  box-shadow:0 24px 80px rgba(0,0,0,.38);
 }
 
 p{
-  font-size:clamp(17px,2.2vw,22px);
-  line-height:1.65;
+  font-size:clamp(18px,2.1vw,23px);
+  line-height:1.75;
   margin-bottom:24px;
 }
 
@@ -96,16 +97,17 @@ p{
   color:#f2c230;
   font-weight:900;
   text-transform:uppercase;
-  font-size:clamp(20px,3vw,30px);
-  margin-top:16px;
+  font-size:clamp(22px,3vw,31px);
+  margin-top:18px;
 }
 
 .sectionTitle{
   text-align:center;
-  margin:46px 0 28px;
-  font-size:clamp(30px,5vw,46px);
+  margin:54px 0 30px;
+  font-size:clamp(31px,5vw,48px);
   text-transform:uppercase;
   letter-spacing:1px;
+  text-shadow:0 4px 0 rgba(0,0,0,.45);
 }
 
 .faqGrid{
@@ -115,8 +117,8 @@ p{
 }
 
 .faq{
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(39,156,111,.42);
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(39,156,111,.5);
   border-radius:18px;
   padding:24px;
 }
@@ -134,11 +136,11 @@ p{
 }
 
 .contact{
-  margin-top:28px;
+  margin-top:30px;
   padding:24px;
   border-radius:18px;
-  background:rgba(39,156,111,.13);
-  border:1px solid rgba(39,156,111,.45);
+  background:rgba(39,156,111,.16);
+  border:1px solid rgba(39,156,111,.5);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -163,9 +165,10 @@ p{
 
 @media(max-width:760px){
   .wrapper{width:92%;padding-top:24px}
-  .card{padding:26px 20px}
+  .card{padding:28px 22px}
   .faqGrid{grid-template-columns:1fr}
-  .logo{width:155px}
+  .logo{width:200px}
+  h1{letter-spacing:1px}
 }
 </style>
 </head>
@@ -175,7 +178,8 @@ p{
 
   <section class="hero">
     <img class="logo" src="logo.png" alt="College Football Brasil">
-    <h1>Comunicado Oficial</h1>
+    <h1>Comunicado<br>Oficial</h1>
+    <div class="data">03 de junho de 2026</div>
     <div class="goldLine"></div>
   </section>
 
@@ -218,7 +222,7 @@ p{
 
     <div class="faq">
       <h3>Despesas de viagem e hospedagem serão reembolsadas?</h3>
-      <p>O processo anunciado refere-se exclusivamente aos ingressos adquiridos para o evento.</p>
+      <p>Neste momento, o processo anunciado refere-se exclusivamente aos ingressos adquiridos para o evento.</p>
     </div>
 
     <div class="faq">
